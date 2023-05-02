@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const dataFile = path.join(__dirname, "data.json");
@@ -51,4 +52,4 @@ app.post("/poll/reset", async (req, res) => {
   res.end();
 });
 
-app.listen(3000, () => console.log("Server is running..."));
+app.listen(PORT, () => console.log("Server is running..."));
